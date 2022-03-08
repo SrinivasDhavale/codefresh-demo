@@ -16,7 +16,7 @@ steps:
   clone:
     title: "Cloning repository"
     type: "git-clone"
-    repo: "SrinivasDhavale/demoooo"
+    repo: "SrinivasDhavale/codefresh-demo"
     # CF_BRANCH value is auto set when pipeline is triggered
     # Learn more at codefresh.io/docs/docs/codefresh-yaml/variables/
     revision: "${{CF_BRANCH}}"
@@ -34,7 +34,7 @@ steps:
   plan:
     title: Terraform Plan
     type: freestyle
-    working_directory: './demoooo'
+    working_directory: './codefresh-demo'
     arguments:
       image: 'hashicorp/terraform'
       commands:
@@ -51,7 +51,7 @@ steps:
   deploy:
     title: Terraform Apply
     type: freestyle
-    working_directory: './demoooo'
+    working_directory: './codefresh-demo'
     arguments:
       image: 'hashicorp/terraform'
       commands:
@@ -73,7 +73,7 @@ steps:
   destroy:
     title: Terraform Destroy
     type: freestyle
-    working_directory: './demoooo'
+    working_directory: './codefresh-demo'
     arguments:
       image: 'hashicorp/terraform'
       commands:
